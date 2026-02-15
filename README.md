@@ -1,51 +1,35 @@
 # go-development
 
-A [Claude Code skill](https://docs.anthropic.com/en/docs/claude-code/skills) for writing production-grade Go code.
+A [Claude Code skill](https://docs.anthropic.com/en/docs/claude-code/skills) for writing Go code that holds up in production.
 
-Not generic advice — concrete patterns extracted from real codebases, with rationale for every decision.
+Covers error handling, interface design, testing, concurrency, resilience, and tooling. Each pattern includes the reasoning behind it, not just the code.
 
-## What's Inside
-
-- **Error handling** — Typed errors, sentinel errors, Unwrap chains, HTTP status mapping
-- **Interface design** — Accept interfaces, return structs, keep interfaces small
-- **Testing** — Table-driven tests, test seams via package-level vars, httptest patterns
-- **Concurrency** — Bounded parallelism, context-aware cancellation, timeout patterns
-- **Resilience** — Circuit breaker, exponential backoff with jitter, retry budgets
-- **Tooling** — golangci-lint, gofumpt, Makefile targets, dev tool pinning
+Based on patterns from [gogcli](https://github.com/steipete/gogcli) by [Peter Steinberger](https://github.com/steipete) and [Effective Go](https://go.dev/doc/effective_go).
 
 ## Install
 
 ```bash
-# Add to your project
 npx skills add oss-skills/go-development
+```
 
-# Or copy manually
+Or copy manually:
+```bash
 cp -r . ~/.claude/skills/go-development/
 ```
 
-## Usage
+## What's in here
 
-Once installed, Claude Code automatically activates this skill when you:
-- Write or review Go code
-- Design interfaces, error types, or package structure
-- Set up Go project tooling
-- Work on concurrency or resilience patterns
-
-## Structure
+The skill activates when you write or review Go code, design interfaces, or set up project tooling.
 
 ```
-SKILL.md                          # Main skill instructions
+SKILL.md                          # Main instructions
 references/
-  errors.md                       # Error handling patterns
-  interfaces.md                   # Interface design principles
-  testing.md                      # Testing strategies and patterns
-  concurrency.md                  # Concurrency and parallelism
-  resilience.md                   # Circuit breakers, backoff, retries
+  errors.md                       # Typed errors, sentinel errors, Unwrap chains
+  interfaces.md                   # Accept interfaces, return structs
+  testing.md                      # Table-driven tests, test seams, httptest
+  concurrency.md                  # Bounded parallelism, context cancellation
+  resilience.md                   # Circuit breaker, backoff with jitter
 ```
-
-## Credits
-
-Patterns distilled from [gogcli](https://github.com/steipete/gogcli) by [Peter Steinberger](https://github.com/steipete) and [Effective Go](https://go.dev/doc/effective_go).
 
 ## License
 
